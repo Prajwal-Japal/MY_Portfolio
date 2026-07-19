@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-/// Glow palette for the liquid-glass look: deep space background
-/// with electric blue / cyan / purple accents.
+/// Neutral dark palette: true charcoal/near-black background (no blue
+/// tint), with violet / emerald / amber as the glow accent trio.
 class AppColors {
-  static const background = Color(0xFF0A0E1A);
-  static const backgroundDeep = Color(0xFF060911);
+  static const background = Color(0xFF0B0B0D);
+  static const backgroundDeep = Color(0xFF050506);
 
-  static const glowBlue = Color(0xFF3B82F6);
-  static const glowCyan = Color(0xFF22D3EE);
-  static const glowPurple = Color(0xFF8B5CF6);
+  static const glowViolet = Color(0xFF8B5CF6);
+  static const glowEmerald = Color(0xFF34D399);
+  static const glowAmber = Color(0xFFF59E0B);
 
   static const textPrimary = Colors.white;
-  static const textMuted = Color(0xFFAAB4C5);
+  static const textMuted = Color(0xFFA8A8AD);
 
-  // Kept for backwards-compat with earlier navy/gold references —
-  // point them at the new glow colors so old code still compiles.
+  // Backwards-compat aliases so older code referencing these names
+  // still compiles — now pointing at the neutral/violet scheme.
   static const navy = background;
-  static const navyLight = Color(0xFF141B2E);
-  static const gold = glowCyan;
-  static const goldLight = glowBlue;
-  static const surface = Color(0xFF0F1524);
+  static const navyLight = Color(0xFF1A1A1E);
+  static const gold = glowAmber;
+  static const goldLight = glowAmber;
+  static const surface = Color(0xFF141416);
+  static const glowBlue = glowViolet;
+  static const glowCyan = glowEmerald;
+  static const glowPurple = glowViolet;
 }
 
 class AppTheme {
@@ -29,8 +32,8 @@ class AppTheme {
     return base.copyWith(
       scaffoldBackgroundColor: AppColors.background,
       colorScheme: base.colorScheme.copyWith(
-        primary: AppColors.glowCyan,
-        secondary: AppColors.glowPurple,
+        primary: AppColors.glowEmerald,
+        secondary: AppColors.glowViolet,
         surface: AppColors.surface,
       ),
       textTheme: GoogleFonts.interTextTheme(base.textTheme).copyWith(
@@ -58,7 +61,7 @@ class AppTheme {
         labelLarge: GoogleFonts.inter(
           fontSize: 14,
           fontWeight: FontWeight.w600,
-          color: AppColors.glowCyan,
+          color: AppColors.glowEmerald,
           letterSpacing: 1.2,
         ),
       ),

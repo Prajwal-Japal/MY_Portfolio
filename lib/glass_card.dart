@@ -5,6 +5,10 @@ import 'theme.dart';
 /// A frosted-glass panel: blurred background, translucent gradient fill,
 /// a light top-edge border, and a soft outer glow. Optionally reacts to
 /// mouse hover with a subtle lift + brighter glow.
+///
+/// Tuned to be more transparent and less over-blurred than a typical
+/// glassmorphism preset, so the texture behind genuinely reads as
+/// "moving" while scrolling instead of looking like a static image.
 class GlassCard extends StatefulWidget {
   final Widget child;
   final EdgeInsetsGeometry padding;
@@ -17,9 +21,9 @@ class GlassCard extends StatefulWidget {
     super.key,
     required this.child,
     this.padding = const EdgeInsets.all(24),
-    this.borderRadius = 20,
-    this.blurSigma = 18,
-    this.glowColor = AppColors.glowBlue,
+    this.borderRadius = 25,
+    this.blurSigma = 5,
+    this.glowColor = AppColors.glowViolet,
     this.interactive = false,
   });
 
@@ -32,8 +36,8 @@ class _GlassCardState extends State<GlassCard> {
 
   @override
   Widget build(BuildContext context) {
-    final glowOpacity = _hovering ? 0.45 : 0.22;
-    final fillTop = _hovering ? 0.14 : 0.08;
+    final glowOpacity = _hovering ? 0.4 : 0.18;
+    final fillTop = _hovering ? 0.10 : 0.05;
 
     // The glow shadow must live OUTSIDE the ClipRRect/BackdropFilter,
     // otherwise the clip would cut the glow off at the card's edge.
@@ -63,16 +67,19 @@ class _GlassCardState extends State<GlassCard> {
             padding: widget.padding,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(widget.borderRadius),
+              // Very light fill — this is what makes it read as glass
+              // rather than a painted panel. Most of the "surface" you
+              // see is actually the blurred background showing through.
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
                   Colors.white.withOpacity(fillTop),
-                  Colors.white.withOpacity(0.03),
+                  Colors.white.withOpacity(0.015),
                 ],
               ),
               border: Border.all(
-                color: Colors.white.withOpacity(_hovering ? 0.35 : 0.18),
+                color: Colors.white.withOpacity(_hovering ? 0.32 : 0.14),
                 width: 1,
               ),
             ),
