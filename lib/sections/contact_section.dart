@@ -45,25 +45,26 @@ class ContactSection extends StatelessWidget {
                 ),
                 const SizedBox(height: 28),
                 Wrap(
-                  spacing: 16,
-                  runSpacing: 16,
+                  spacing: 5,
+                  runSpacing: 10,
                   children: [
                     _ContactButton(
                       label: 'Email',
-                      onTap: () => _openLink('mailto:your.email@example.com'),
+                      onTap: () => _openLink('prajwaljapal@gmail.com'),
                     ),
                     _ContactButton(
                       label: 'LinkedIn',
                       onTap: () =>
-                          _openLink('https://linkedin.com/in/yourprofile'),
+                          _openLink('https://linkedin.com/in/prajwal-japal'),
                     ),
                     _ContactButton(
                       label: 'GitHub',
-                      onTap: () => _openLink('https://github.com/yourusername'),
+                      onTap: () =>
+                          _openLink('https://github.com/Prajwal-japal'),
                     ),
                   ],
                 ),
-                const SizedBox(height: 48),
+                const SizedBox(height: 30),
                 Text(
                   '© 2026 Pajju. Built with Flutter.',
                   style: Theme.of(context).textTheme.bodyMedium,

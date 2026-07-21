@@ -31,12 +31,13 @@ class AboutSection extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  'I\'m an engineering student and co-founder of Pingaksh, based in '
-                  'Bengaluru. Alongside the founding team, I work on strategy, '
-                  'operations, and pitching — while staying hands-on with the '
-                  'product itself. Outside of that, I build with Flutter, Kotlin, '
-                  'and Node.js, experiment with local AI models, and take on '
-                  'hackathons whenever I can.',
+                  'I\'m an engineering student and founder-minded builder based in '
+                  'Bengaluru, working at the intersection of product strategy and '
+                  'hands-on development. Outside of coursework, I spend my time '
+                  'building with Flutter, Kotlin, and Node.js, experimenting with '
+                  'local AI models, and competing in hackathons. I care about '
+                  'turning ideas into working products fast — and learning by '
+                  'shipping rather than just studying.',
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ],

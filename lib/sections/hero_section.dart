@@ -21,12 +21,12 @@ class HeroSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'PAJJU',
+                'PRAJWAL V JAPAL',
                 style: Theme.of(context).textTheme.labelLarge,
               ).animate().fadeIn(duration: 400.ms),
               const SizedBox(height: 20),
               Text(
-                'Building Pingaksh — on-demand\nsafety, shipped fast.',
+                'FULL STACK APP AND WEB DEVELOPER',
                 style: Theme.of(context).textTheme.displayLarge?.copyWith(
                   fontSize: isDesktop ? 56 : 34,
                 ),
@@ -36,7 +36,7 @@ class HeroSection extends StatelessWidget {
                 width: isDesktop ? 560 : double.infinity,
                 child: Text(
                   'Engineering student, founder, and vibecoder — working across '
-                  'startup strategy, Flutter/Kotlin/Node.js development, and '
+                  'startup strategy, Flutter/Node.js development(cross-platform fra), and '
                   'AI tooling. Currently building Pingaksh and exploring '
                   'healthcare tech on the side.',
                   style: Theme.of(context).textTheme.bodyLarge,
