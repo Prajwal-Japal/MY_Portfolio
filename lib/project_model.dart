@@ -17,26 +17,14 @@ class Project {
 /// Your projects live here — edit this list to add/remove/reorder.
 const List<Project> projects = [
   Project(
-    title: 'Pingaksh',
+    title: 'Aditi',
     description:
-        'On-demand guard and bouncer booking platform focused on personal '
-        'safety in India. Co-founded and built out the product architecture: '
-        'a receptionist-operated dashboard, QR-based booking flow, and an '
-        'AI voice assistant for inbound calls.',
-    stack: ['Flutter', 'Node.js', 'Supabase', 'AI Voice'],
-    linkUrl: null,
-    linkLabel: 'Read more',
-  ),
-  Project(
-    title: 'Exoplanet Detection Pipeline',
-    description:
-        'Built for the Bharatiya Antariksh Hackathon 2026 (ISRO + Hack2skill). '
-        'An AI-powered pipeline for detecting exoplanets from light-curve '
-        'data, using Lightkurve for signal processing and Streamlit for '
-        'the interactive interface.',
-    stack: ['Python', 'Lightkurve', 'Streamlit', 'Colab'],
-    linkUrl: null,
-    linkLabel: 'View on GitHub',
+        'A hospital website built to streamline patient-facing information '
+        'and services, with a clean, accessible interface designed for '
+        'quick navigation across departments and care options.',
+    stack: ['Flutter', 'Dart'],
+    linkUrl: null, // paste your live link or GitHub repo URL here
+    linkLabel: 'View project',
   ),
   Project(
     title: 'WildGuard-RL',

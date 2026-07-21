@@ -7,8 +7,8 @@ class SkillsSection extends StatelessWidget {
   const SkillsSection({super.key});
 
   static const skillGroups = {
-    'Mobile & Frontend': ['Flutter', 'Dart', 'Kotlin', 'Node.js'],
-    'Backend': ['Node.js', 'Flask', 'Spring'],
+    'Mobile & Frontend': ['Flutter', 'Dart', 'Node.js'],
+    'Backend': ['Node.js', 'dart', 'Supabase'],
     'Data & AI': [
       'Supabase',
       'Firebase',

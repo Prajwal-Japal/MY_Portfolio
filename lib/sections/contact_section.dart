@@ -54,8 +54,9 @@ class ContactSection extends StatelessWidget {
                     ),
                     _ContactButton(
                       label: 'LinkedIn',
-                      onTap: () =>
-                          _openLink('https://linkedin.com/in/prajwal-japal'),
+                      onTap: () => _openLink(
+                        'https://www.linkedin.com/in/prajwal-japal-5b173a364/',
+                      ),
                     ),
                     _ContactButton(
                       label: 'GitHub',
