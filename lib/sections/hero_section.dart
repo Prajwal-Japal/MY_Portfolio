@@ -30,7 +30,12 @@ class HeroSection extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: AppColors.glowEmerald.withOpacity(0.4),
+                    color: const Color.fromARGB(
+                      255,
+                      239,
+                      37,
+                      37,
+                    ).withOpacity(0.4),
                   ),
                 ),
                 child: Text(
@@ -45,18 +50,23 @@ class HeroSection extends StatelessWidget {
               // the page — with a continuous shimmer sweep so it feels
               // alive rather than static.
               Text(
-                    'Prajwal V Japal',
+                    'PRAJWAL V JAPAL',
                     style: Theme.of(context).textTheme.displayLarge?.copyWith(
                       fontSize: isDesktop ? 96 : 48,
                       height: 1.0,
-                      letterSpacing: -1.5,
+                      letterSpacing: -1,
                     ),
                   )
                   .animate(onPlay: (c) => c.repeat())
                   .shimmer(
                     delay: 800.ms,
                     duration: 2200.ms,
-                    color: AppColors.glowEmerald.withOpacity(0.7),
+                    color: const Color.fromARGB(
+                      255,
+                      52,
+                      211,
+                      110,
+                    ).withOpacity(0.7),
                   )
                   .animate() // separate, one-shot entrance animation
                   .fadeIn(duration: 600.ms)
@@ -118,7 +128,12 @@ class _GlowButtonState extends State<_GlowButton> {
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.glowEmerald.withOpacity(_hovering ? 0.5 : 0.3),
+              color: const Color.fromARGB(
+                255,
+                63,
+                103,
+                89,
+              ).withOpacity(_hovering ? 0.5 : 0.3),
               blurRadius: _hovering ? 28 : 18,
               spreadRadius: -4,
             ),

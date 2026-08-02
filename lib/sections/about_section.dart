@@ -20,9 +20,9 @@ class AboutSection extends StatelessWidget {
           ),
           child: GlassCard(
             borderRadius: 24,
-            ambientGlowColor: AppColors.glowEmerald,
-            borderLightColor: AppColors.glowEmerald,
-            padding: const EdgeInsets.all(36),
+            ambientGlowColor: const Color.fromARGB(255, 88, 128, 113),
+            borderLightColor: const Color.fromARGB(255, 211, 52, 52),
+            padding: const EdgeInsets.all(50),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
