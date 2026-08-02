@@ -20,33 +20,67 @@ class HeroSection extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'PRAJWAL V JAPAL',
-                style: Theme.of(context).textTheme.labelLarge,
-              ).animate().fadeIn(duration: 400.ms),
-              const SizedBox(height: 20),
-              Text(
-                'FULL STACK APP AND WEB DEVELOPER',
-                style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                  fontSize: isDesktop ? 56 : 34,
+              // Small role/eyebrow tag above the name — kept minimal so
+              // the name below is clearly the visual anchor.
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 6,
                 ),
-              ).animate().fadeIn(duration: 500.ms).slideY(begin: 0.2, end: 0),
-              const SizedBox(height: 20),
-              SizedBox(
-                width: isDesktop ? 560 : double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: AppColors.glowEmerald.withOpacity(0.4),
+                  ),
+                ),
                 child: Text(
-                  'Engineering student, founder, and vibecoder — working across '
-                  'startup strategy, Flutter/Node.js development(cross-platform fra), and '
-                  'AI tooling. Currently building Pingaksh and exploring '
-                  'healthcare tech on the side.',
+                  'FULL STACK APP & WEB DEVELOPER',
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
+              ).animate().fadeIn(duration: 400.ms),
+
+              const SizedBox(height: 28),
+
+              // The name is now the largest, most dominant element on
+              // the page — with a continuous shimmer sweep so it feels
+              // alive rather than static.
+              Text(
+                    'Prajwal V Japal',
+                    style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                      fontSize: isDesktop ? 96 : 48,
+                      height: 1.0,
+                      letterSpacing: -1.5,
+                    ),
+                  )
+                  .animate(onPlay: (c) => c.repeat())
+                  .shimmer(
+                    delay: 800.ms,
+                    duration: 2200.ms,
+                    color: AppColors.glowEmerald.withOpacity(0.7),
+                  )
+                  .animate() // separate, one-shot entrance animation
+                  .fadeIn(duration: 600.ms)
+                  .slideY(begin: 0.15, end: 0),
+
+              const SizedBox(height: 24),
+
+              SizedBox(
+                width: isDesktop ? 620 : double.infinity,
+                child: Text(
+                  'Engineering student, founder-minded builder, and vibecoder — '
+                  'working across startup strategy, cross-platform development '
+                  'with Flutter and Node.js, and AI tooling. Currently building '
+                  'Pingaksh and exploring healthcare tech on the side.',
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
-              ).animate().fadeIn(duration: 600.ms, delay: 150.ms),
-              const SizedBox(height: 36),
+              ).animate().fadeIn(duration: 600.ms, delay: 200.ms),
+
+              const SizedBox(height: 40),
+
               _GlowButton(
                 label: 'See my work',
                 onPressed: onProjectsPressed,
-              ).animate().fadeIn(duration: 700.ms, delay: 300.ms),
+              ).animate().fadeIn(duration: 700.ms, delay: 350.ms),
             ],
           ),
         );
@@ -55,8 +89,7 @@ class HeroSection extends StatelessWidget {
   }
 }
 
-/// A button with a soft glow shadow that intensifies on hover —
-/// matches the glass/glow language used across the rest of the page.
+/// A button with a soft glow shadow that intensifies on hover.
 class _GlowButton extends StatefulWidget {
   final String label;
   final VoidCallback onPressed;
@@ -81,11 +114,11 @@ class _GlowButtonState extends State<_GlowButton> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           gradient: const LinearGradient(
-            colors: [AppColors.glowBlue, AppColors.glowCyan],
+            colors: [AppColors.glowViolet, AppColors.glowEmerald],
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.glowCyan.withOpacity(_hovering ? 0.5 : 0.3),
+              color: AppColors.glowEmerald.withOpacity(_hovering ? 0.5 : 0.3),
               blurRadius: _hovering ? 28 : 18,
               spreadRadius: -4,
             ),

@@ -26,7 +26,8 @@ class ContactSection extends StatelessWidget {
           ),
           child: GlassCard(
             borderRadius: 24,
-            glowColor: AppColors.glowCyan,
+            ambientGlowColor: AppColors.glowCyan,
+            borderLightColor: AppColors.glowCyan,
             padding: const EdgeInsets.all(36),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,27 +46,25 @@ class ContactSection extends StatelessWidget {
                 ),
                 const SizedBox(height: 28),
                 Wrap(
-                  spacing: 5,
-                  runSpacing: 10,
+                  spacing: 16,
+                  runSpacing: 16,
                   children: [
                     _ContactButton(
                       label: 'Email',
-                      onTap: () => _openLink('prajwaljapal@gmail.com'),
+                      onTap: () => _openLink('mailto:your.email@example.com'),
                     ),
                     _ContactButton(
                       label: 'LinkedIn',
-                      onTap: () => _openLink(
-                        'https://www.linkedin.com/in/prajwal-japal-5b173a364/',
-                      ),
+                      onTap: () =>
+                          _openLink('https://linkedin.com/in/yourprofile'),
                     ),
                     _ContactButton(
                       label: 'GitHub',
-                      onTap: () =>
-                          _openLink('https://github.com/Prajwal-japal'),
+                      onTap: () => _openLink('https://github.com/yourusername'),
                     ),
                   ],
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 48),
                 Text(
                   '© 2026 Pajju. Built with Flutter.',
                   style: Theme.of(context).textTheme.bodyMedium,

@@ -7,8 +7,8 @@ class SkillsSection extends StatelessWidget {
   const SkillsSection({super.key});
 
   static const skillGroups = {
-    'Mobile & Frontend': ['Flutter', 'Dart', 'Node.js'],
-    'Backend': ['Node.js', 'dart', 'Supabase'],
+    'Mobile & Frontend': ['Flutter', 'Dart', 'Kotlin', 'Node.js'],
+    'Backend': ['Node.js', 'Flask', 'Spring'],
     'Data & AI': [
       'Supabase',
       'Firebase',
@@ -50,7 +50,8 @@ class SkillsSection extends StatelessWidget {
                   child:
                       GlassCard(
                             borderRadius: 16,
-                            glowColor: _glowCycle[i % _glowCycle.length],
+                            ambientGlowColor: _glowCycle[i % _glowCycle.length],
+                            borderLightColor: _glowCycle[i % _glowCycle.length],
                             padding: const EdgeInsets.all(24),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

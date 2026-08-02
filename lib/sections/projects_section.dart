@@ -101,7 +101,8 @@ class _ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlassCard(
           interactive: true,
-          glowColor: glowColor,
+          ambientGlowColor: glowColor,
+          borderLightColor: glowColor,
           borderRadius: 18,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
