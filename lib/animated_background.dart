@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'theme.dart';
+import 'animation_config.dart';
 
 /// Full-page background: your image, desaturated and darkened so it
 /// reads as a true black theme (not just "dark purple"), with a slow
@@ -25,12 +26,12 @@ class _AnimatedBackgroundState extends State<AnimatedBackground>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 16),
+      duration: AnimConfig.backgroundDriftDuration,
     )..repeat(reverse: true);
 
     _autoScale = Tween<double>(
-      begin: 1.05,
-      end: 1.12,
+      begin: AnimConfig.backgroundScaleMin,
+      end: AnimConfig.backgroundScaleMax,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
     _autoAlignment = AlignmentTween(
@@ -63,7 +64,7 @@ class _AnimatedBackgroundState extends State<AnimatedBackground>
           child: AnimatedBuilder(
             animation: _controller,
             builder: (context, _) {
-              const pointerWeight = 0.08;
+              final pointerWeight = AnimConfig.pointerParallaxWeight;
               final blendedAlignment = Alignment(
                 (_autoAlignment.value.x + _pointer.dx * pointerWeight).clamp(
                   -1.0,

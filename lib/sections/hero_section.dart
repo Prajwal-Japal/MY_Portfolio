@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../theme.dart';
+import '../animation_config.dart';
 
 class HeroSection extends StatelessWidget {
   final VoidCallback onProjectsPressed;
@@ -30,12 +31,7 @@ class HeroSection extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: const Color.fromARGB(
-                      255,
-                      239,
-                      37,
-                      37,
-                    ).withOpacity(0.4),
+                    color: AppColors.glowEmerald.withOpacity(0.4),
                   ),
                 ),
                 child: Text(
@@ -50,27 +46,24 @@ class HeroSection extends StatelessWidget {
               // the page — with a continuous shimmer sweep so it feels
               // alive rather than static.
               Text(
-                    'PRAJWAL V JAPAL',
+                    'Prajwal V Japal',
                     style: Theme.of(context).textTheme.displayLarge?.copyWith(
                       fontSize: isDesktop ? 96 : 48,
                       height: 1.0,
-                      letterSpacing: -1,
+                      letterSpacing: -1.5,
                     ),
                   )
                   .animate(onPlay: (c) => c.repeat())
                   .shimmer(
-                    delay: 800.ms,
-                    duration: 2200.ms,
-                    color: const Color.fromARGB(
-                      255,
-                      52,
-                      211,
-                      110,
-                    ).withOpacity(0.7),
+                    delay: AnimConfig.shimmerDelay,
+                    duration: AnimConfig.shimmerDuration,
+                    color: AppColors.glowEmerald.withOpacity(
+                      AnimConfig.shimmerOpacity,
+                    ),
                   )
                   .animate() // separate, one-shot entrance animation
-                  .fadeIn(duration: 600.ms)
-                  .slideY(begin: 0.15, end: 0),
+                  .fadeIn(duration: AnimConfig.heroFadeDuration)
+                  .slideY(begin: AnimConfig.heroSlideOffset, end: 0),
 
               const SizedBox(height: 24),
 
@@ -128,12 +121,7 @@ class _GlowButtonState extends State<_GlowButton> {
           ),
           boxShadow: [
             BoxShadow(
-              color: const Color.fromARGB(
-                255,
-                63,
-                103,
-                89,
-              ).withOpacity(_hovering ? 0.5 : 0.3),
+              color: AppColors.glowEmerald.withOpacity(_hovering ? 0.5 : 0.3),
               blurRadius: _hovering ? 28 : 18,
               spreadRadius: -4,
             ),

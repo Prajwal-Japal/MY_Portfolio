@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'theme.dart';
+import 'animation_config.dart';
 
 /// "Water morphism" glass panel: the usual frosted blur + transparent
 /// fill, but instead of a static border, a bright comet of light
@@ -45,7 +46,7 @@ class _GlassCardState extends State<GlassCard>
     // Speeds up slightly on hover for a responsive feel.
     _lightController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 5),
+      duration: AnimConfig.borderLightLap,
     )..repeat();
   }
 
@@ -61,9 +62,13 @@ class _GlassCardState extends State<GlassCard>
     final fillTop = _hovering ? 0.10 : 0.05;
 
     final card = AnimatedContainer(
-      duration: const Duration(milliseconds: 220),
+      duration: AnimConfig.cardHoverDuration,
       curve: Curves.easeOut,
-      transform: Matrix4.translationValues(0, _hovering ? -4 : 0, 0),
+      transform: Matrix4.translationValues(
+        0,
+        _hovering ? -AnimConfig.cardHoverLiftPx : 0,
+        0,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(widget.borderRadius),
         boxShadow: [
@@ -84,7 +89,7 @@ class _GlassCardState extends State<GlassCard>
                 sigmaY: widget.blurSigma,
               ),
               child: AnimatedContainer(
-                duration: const Duration(milliseconds: 220),
+                duration: AnimConfig.cardHoverDuration,
                 padding: widget.padding,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(widget.borderRadius),
@@ -119,7 +124,9 @@ class _GlassCardState extends State<GlassCard>
                       angle: _lightController.value * 2 * math.pi,
                       borderRadius: widget.borderRadius,
                       glowColor: widget.borderLightColor,
-                      intensity: _hovering ? 1.0 : 0.65,
+                      intensity: _hovering
+                          ? AnimConfig.borderLightIntensityHover
+                          : AnimConfig.borderLightIntensityIdle,
                     ),
                   );
                 },
